@@ -1,0 +1,1 @@
+pyuic4 mainframe.ui > mainframe_ui.py
