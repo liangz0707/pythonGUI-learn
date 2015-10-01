@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ImageDlg.ui'
+# Form implementation generated from reading ui file 'ui/ImageDlg.ui'
 #
 # Created by: PyQt4 UI code generator 4.11.4
 #
@@ -25,12 +25,14 @@ except AttributeError:
 class Ui_ImageDlg(object):
     def setupUi(self, ImageDlg):
         ImageDlg.setObjectName(_fromUtf8("ImageDlg"))
-        ImageDlg.resize(791, 509)
+        ImageDlg.resize(480, 331)
         self.gridLayout = QtGui.QGridLayout(ImageDlg)
         self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
-        self.matW = MatplotlibWidget(ImageDlg)
-        self.matW.setObjectName(_fromUtf8("matW"))
-        self.gridLayout.addWidget(self.matW, 0, 0, 1, 1)
+        self.imgLabel = QtGui.QLabel(ImageDlg)
+        self.imgLabel.setText(_fromUtf8(""))
+        self.imgLabel.setScaledContents(True)
+        self.imgLabel.setObjectName(_fromUtf8("imgLabel"))
+        self.gridLayout.addWidget(self.imgLabel, 0, 0, 1, 1)
 
         self.retranslateUi(ImageDlg)
         QtCore.QMetaObject.connectSlotsByName(ImageDlg)
@@ -38,4 +40,3 @@ class Ui_ImageDlg(object):
     def retranslateUi(self, ImageDlg):
         ImageDlg.setWindowTitle(_translate("ImageDlg", "CenterFW", None))
 
-from matplotlibwidget import MatplotlibWidget

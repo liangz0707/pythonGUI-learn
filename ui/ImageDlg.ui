@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>791</width>
-    <height>509</height>
+    <width>480</width>
+    <height>331</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,17 +15,17 @@
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
-    <widget class="MatplotlibWidget" name="matW"/>
+    <widget class="QLabel" name="imgLabel">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>MatplotlibWidget</class>
-   <extends>QWidget</extends>
-   <header>matplotlibwidget</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

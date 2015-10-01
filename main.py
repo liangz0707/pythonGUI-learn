@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 import sys
+
 from PyQt4 import QtCore,QtGui
-from mainframe_ui import Ui_myediter as m_ui
+
+from ui.mainframe_ui import Ui_myediter as m_ui
+
 
 class myediter(QtGui.QWidget):
     def __init__(self,parent=None):
