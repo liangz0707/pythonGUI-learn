@@ -5,7 +5,7 @@ import random
 from skimage import io
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
-from scipy.misc.pilutil import  toimage
+from scipy.misc.pilutil import toimage
 from PIL.ImageQt import ImageQt
 #该方法把nparray的数组转化成了Qt所需要的类型
 def nparrayToQPixmap(arrayImage):
@@ -52,7 +52,8 @@ class myediter(QtGui.QMainWindow):
         QtCore.QObject.connect(self.lui.openButton,QtCore.SIGNAL("clicked()"),self.openImg)
         #生成字典
         QtCore.QObject.connect(self.tui.createSCdicButton,QtCore.SIGNAL("clicked()"),self.createDict)
-    #选择几个图片文件，然后创建字典
+
+    #选择几个图片文件，然后创建字典,最后显示字典重构的效果。
     def createDict(self):
         '''
         以下方法提供了对于numpy和PIL之间的数据转换
@@ -82,7 +83,7 @@ class myediter(QtGui.QMainWindow):
         print u"开始计算字典ing"
         (B,S) = sc.sparse_coding(X,64,0.4,1)
         self.callback(X, B, S)
-
+    #这只是做在Qt当中现实numpy格式图像的例子
     def openImg(self):
         from scipy import misc
         l = misc.lena()
@@ -124,6 +125,10 @@ class myediter(QtGui.QMainWindow):
         a = np.min(x)
         b = np.max(x)
         return (x - a) / (b - a)
+    #变形patch从一个patch像另外一个patch靠拢
+    def deformedPatch(self):
+
+        pass
 
 app = QtGui.QApplication(sys.argv)
 myapp = myediter()
