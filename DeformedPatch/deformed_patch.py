@@ -9,9 +9,13 @@ from skimage import io
 import skimage
 from theano.tensor.nnet import conv #接触theano进行卷积操作
 import time
+from pylab import mpl
 '''
 输入两个patch，返回变形的（u,v）向量
 '''
+#解决matlibplot当中中文显示问题
+mpl.rcParams['font.sans-serif'] = ['SimHei'] #指定默认字体
+
 #这里并非优化W而是优化(u,v)
 class deformed_patch(object):
     def __init__(self):
@@ -185,14 +189,19 @@ u=u.reshape(u.shape[2],u.shape[3])
 v=v.reshape(v.shape[2],v.shape[3])
 cp=cp.reshape(cp.shape[2],cp.shape[3])
 plt.subplot(2,3,1)
+plt.title(u"x方向位移幅度")
 plt.imshow(v,cmap=cm.gray)
 plt.subplot(2,3,4)
+plt.title(u"y方向位移幅度")
 plt.imshow(u,cmap=cm.gray)
 plt.subplot(2,3,2)
+plt.title(u"输入")
 plt.imshow(skimage.img_as_float(img_in[:,:,1]),cmap=cm.gray)
 plt.subplot(2,3,3)
+plt.title(u"变形目标")
 plt.imshow(cp,cmap=cm.gray)
 plt.subplot(2,3,6)
+plt.title(u"变形结果")
 plt.imshow(skimage.img_as_float(img_out[:,:,1]),cmap=cm.gray)
 plt.show()
 cp = np.asarray(cp,dtype='float64')
