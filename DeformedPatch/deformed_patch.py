@@ -180,8 +180,8 @@ print i.shape
 plt.imshow(gy,cmap=cm.gray)
 plt.show()
 '''
-img_in = io.imread("F:\\tec_learn\\pythonGUI-learn\\res\\c1.jpg")
-img_out = io.imread("F:\\tec_learn\\pythonGUI-learn\\res\\c2.jpg")
+img_in = io.imread("F:\\learning\\pythonGUI-learn\\res\\c1.jpg")
+img_out = io.imread("F:\\learning\\pythonGUI-learn\\res\\c2.jpg")
 
 (u,v,cp) = dp.getUV(skimage.img_as_float(img_in[:,:,1]),skimage.img_as_float(img_out[:,:,1]))
 print (u.dtype,u.shape)
